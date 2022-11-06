@@ -7,19 +7,17 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "packagerOpts": {
-      "sourceExts": [ "js", "json", "ts", "tsx", "jsx" ]
+      "sourceExts": ["js", "json", "ts", "tsx", "jsx"]
     },
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#7aca2a"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

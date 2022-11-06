@@ -1,11 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
-import colors from "../../const/colors";
+import { StyleSheet, View, Button } from 'react-native';
+import colors from '../../consts/colors';
+import Text from '../../components/text';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Welcome</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.top}>
+        <Text textStyle="title">Welcome</Text>
+      </View>
+      <View style={styles.mid}>
+        <Button title="Go to wallet"></Button>
+        <Button
+          title="Add a purchase"
+          onPress={() => navigation.navigate('AddPurchase')}
+        ></Button>
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -15,11 +26,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.main,
-    justifyContent: "center",
-    alignItems: "center"
+    alignItems: 'center',
   },
   text: {
-    color: "white",
+    color: 'white',
     fontSize: 29,
+  },
+  top: {
+    flex: 1,
+  },
+  mid: {
+    gap: 10,
+    flex: 5,
   },
 });

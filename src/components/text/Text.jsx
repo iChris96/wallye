@@ -7,6 +7,10 @@ const MyText = ({ textStyle, children }) => {
   return <Text style={styles[textStyle ?? 'regular']}>{children}</Text>;
 };
 
+MyText.caption = ({ style = {}, children }) => {
+  return <Text style={{ ...styles.caption, ...style }}>{children}</Text>;
+};
+
 const styles = StyleSheet.create({
   regular: {
     fontSize: font.sizes.font20,
@@ -17,6 +21,11 @@ const styles = StyleSheet.create({
     fontSize: font.sizes.font24,
     color: colors.white,
     fontFamily: 'InconsolataBold',
+  },
+  caption: {
+    fontSize: font.sizes.font12,
+    color: colors.white,
+    fontFamily: 'Inconsolata',
   },
 });
 

@@ -1,21 +1,40 @@
-import { StyleSheet, TextInput } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import { forwardRef } from 'react';
-import colors from '../../consts/colors';
+import Text from '../text';
+import { defaultInputStyle } from '../../consts/inputs';
 
 const MyTextInput = forwardRef((props, ref) => {
-  return <TextInput ref={ref} style={styles.input} {...props}></TextInput>;
+  const renderInputError = () => {
+    if (props.error) {
+      return (
+        <View>
+          <Text.caption style={{ color: 'red' }}>{props.error}</Text.caption>
+        </View>
+      );
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        ref={ref}
+        style={styles.input}
+        {...props}
+        placeholderTextColor={defaultInputStyle.placeholderTextColor}
+      />
+      {renderInputError()}
+    </View>
+  );
 });
 
 export default MyTextInput;
 
 const styles = StyleSheet.create({
-  input: {
-    color: colors.white,
-    placeholderTextColor: 'gray',
-    height: 40,
-    padding: 2,
-    borderRadius: 4,
+  container: {
     marginVertical: 8,
-    backgroundColor: colors.mainDark,
+    width: '100%',
+  },
+  input: {
+    ...defaultInputStyle,
   },
 });

@@ -1,5 +1,5 @@
 const sizes = {
-  font8: 8,
+  font10: 10,
   font12: 12,
   font16: 16,
   font20: 20,
@@ -7,9 +7,9 @@ const sizes = {
 };
 
 const weight = {
-  full: "900",
-  bold: "bold",
-  normal: "normal",
+  full: '900',
+  bold: 'bold',
+  normal: 'normal',
 };
 
 export default {
